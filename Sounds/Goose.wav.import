@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Goose.wav-483689b1a4f29527babbe8d310e38f4f.sample"
+
+[deps]
+
+source_file="res://Sounds/Goose.wav"
+dest_files=[ "res://.import/Goose.wav-483689b1a4f29527babbe8d310e38f4f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
