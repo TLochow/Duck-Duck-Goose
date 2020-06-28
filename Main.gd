@@ -3,7 +3,8 @@ extends Node2D
 var DUCKSCENE = preload("res://Duck.tscn")
 var GOOSESCENE = preload("res://Goose.tscn")
 
-var Score = 0.0
+var Score = 0
+var Highscore
 var GameOver = false
 
 var RestartTimer = 2.0
@@ -55,10 +56,16 @@ func _on_SpawnTimer_timeout():
 func GooseAtBottom():
 	if not GameOver:
 		GameOver = true
+		$GooseLaughing.play()
+		LoadHighScore()
+		if Score > Highscore:
+			Highscore = Score
+			SaveHighScore()
+			$UI/GameOver/NewHighscore.visible = true
+		$UI/GameOver/Highscore.text = "Highscore: " + str(Highscore)
 		$UI/Points.visible = false
 		$UI/GameOver/Points.text = "Score: " + str(Score)
 		$UI/GameOver.visible = true
-		$GooseLaughing.play()
 
 func DuckAtBottom():
 	if not GameOver:
@@ -66,3 +73,16 @@ func DuckAtBottom():
 		$UI/Points.text = "Score: " + str(Score)
 		if not $Duck.playing:
 			$Duck.play()
+
+func LoadHighScore():
+	Highscore = 0
+	var config = ConfigFile.new()
+	var result = config.load("user://settings.cfg")
+	if result == OK:
+		Highscore = config.get_value("defaults", "highscore", 0)
+
+func SaveHighScore():
+	var config = ConfigFile.new()
+	var result = config.load("user://settings.cfg")
+	config.set_value("defaults", "highscore", Highscore)
+	config.save("user://settings.cfg")

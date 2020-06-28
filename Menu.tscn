@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ARCADE_N.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://sprites/Ground.png" type="Texture" id=2]
 [ext_resource path="res://sprites/Goose.png" type="Texture" id=3]
 [ext_resource path="res://sprites/Duck.png" type="Texture" id=4]
 [ext_resource path="res://Menu.gd" type="Script" id=5]
+[ext_resource path="res://Sounds/Duck.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 outline_size = 1
@@ -118,3 +119,7 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0

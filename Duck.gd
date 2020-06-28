@@ -24,6 +24,10 @@ func _process(delta):
 			emit_signal("ReachedBottom")
 			queue_free()
 	set_position(pos)
+	
+	if IsGoose:
+		var colorStrenght = range_lerp(clamp(pos.y, 200.0, 250.0), 200.0, 250.0, 0.0, 1.0)
+		$Sprite.modulate = Color(1.0, 1.0 - (colorStrenght * 0.4), 1.0 - colorStrenght, 1.0)
 
 func Spotted():
 	if not IsSpotted:

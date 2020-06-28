@@ -40,7 +40,7 @@ region_rect = Rect2( 0, 0, 200, 340 )
 [node name="SpawnTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="DucksAndGooses" type="Node2D" parent="."]
+[node name="DucksAndGooses" type="YSort" parent="."]
 
 [node name="Detection" type="Area2D" parent="."]
 
@@ -63,6 +63,7 @@ __meta__ = {
 }
 
 [node name="GameOver" type="Control" parent="UI"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -90,6 +91,36 @@ margin_bottom = -176.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Score: 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Highscore" type="Label" parent="UI/GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 96.0
+margin_bottom = -128.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Highscore: 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewHighscore" type="Label" parent="UI/GameOver"]
+visible = false
+modulate = Color( 1, 0.607843, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 128.0
+margin_bottom = -128.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "New Highscore!"
 align = 1
 valign = 1
 __meta__ = {
