@@ -40,20 +40,19 @@ position = Vector2( 32, 248 )
 texture = ExtResource( 4 )
 
 [node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( 144, 40 )
+position = Vector2( 140, 40 )
 texture = ExtResource( 3 )
 
 [node name="Sprite5" type="Sprite" parent="."]
-position = Vector2( 32, 56 )
+position = Vector2( 40, 56 )
 texture = ExtResource( 4 )
 flip_h = true
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -24.0
 margin_top = -8.0
-margin_right = -60.0
+margin_right = -36.0
 margin_bottom = -264.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -83,8 +82,9 @@ __meta__ = {
 [node name="Label3" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 72.0
+margin_left = 48.0
 margin_top = 40.0
+margin_right = -24.0
 margin_bottom = -219.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
